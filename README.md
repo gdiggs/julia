@@ -1,4 +1,4 @@
-# dee
+# julia
 
 A web application for creating 4x6" recipe cards optimized for thermal printer output.
 
@@ -52,13 +52,13 @@ Static files will be output to the `dist/` directory.
 ### Build the image
 
 ```bash
-docker build -t dee .
+docker build -t julia .
 ```
 
 ### Run the container
 
 ```bash
-docker run -p 8080:80 dee
+docker run -p 8080:80 julia
 ```
 
 The app will be available at http://localhost:8080

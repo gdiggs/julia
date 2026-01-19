@@ -16,7 +16,7 @@ function App() {
   })
 
   useEffect(() => {
-    document.title = recipe.title ? `${recipe.title} | dee` : 'dee'
+    document.title = recipe.title ? `${recipe.title} - julia` : 'julia'
   }, [recipe.title])
 
   const handleChange = (field, value) => {
