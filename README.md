@@ -5,11 +5,14 @@ A web application for creating 4x6" recipe cards optimized for thermal printer o
 ## Features
 
 - **Import from URL** - Paste a recipe URL to automatically extract recipe data
+- **URL Parameter Import** - Share links that auto-import recipes via `?recipe_url=`
+- **Browser Omnibox Integration** - Import recipes directly from Chrome's address bar
 - **4x6" Recipe Cards** - Sized perfectly for standard thermal printer paper
 - **Live Preview** - See your recipe card update as you type
 - **Auto-scaling Text** - Long recipes automatically reduce font size to fit the card
 - **Thermal Printer Optimized** - Heavy font weights, pure black text, and minimal margins for best print quality
 - **Dynamic Page Title** - Browser tab shows the recipe name
+- **SEO Optimized** - Open Graph and Twitter Card metadata for social sharing
 
 ## Technologies
 
@@ -72,6 +75,27 @@ The app will be available at http://localhost:8080
 3. The form will be populated with the recipe details
 
 Most recipe websites use structured data (JSON-LD with schema.org Recipe) which the app can parse automatically.
+
+### URL Parameter Import
+
+You can share links that automatically import a recipe by adding the `recipe_url` parameter:
+
+```
+https://yoursite.com/?recipe_url=https://example.com/recipe
+```
+
+When someone opens this link, the recipe will be automatically imported and displayed.
+
+### Browser Omnibox Integration
+
+Julia supports OpenSearch, which enables importing recipes directly from Chrome's address bar:
+
+1. Visit the Julia app at least once so Chrome discovers the search provider
+2. Type the site URL in Chrome's address bar (e.g., `yoursite.com`)
+3. Press **Tab** when Chrome shows "Search Julia"
+4. Paste a recipe URL and press **Enter**
+
+The recipe will be automatically imported.
 
 ### Manual Entry
 

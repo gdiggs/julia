@@ -19,6 +19,27 @@
   margin: 0;
 }
 
+/* Auto-import status messages */
+.auto-import-status {
+  text-align: center;
+  padding: 1rem;
+  background: #e3f2fd;
+  color: #1565c0;
+  border-radius: 4px;
+  max-width: 1200px;
+  margin: 0 auto 1rem auto;
+}
+
+.auto-import-error {
+  text-align: center;
+  padding: 1rem;
+  background: #ffebee;
+  color: #c62828;
+  border-radius: 4px;
+  max-width: 1200px;
+  margin: 0 auto 1rem auto;
+}
+
 .app-main {
   display: grid;
   grid-template-columns: 1fr 1fr;
