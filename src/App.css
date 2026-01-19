@@ -294,6 +294,32 @@
   font-weight: 600;
 }
 
+/* Multi-page layout */
+.recipe-cards-multi {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.recipe-cards-multi .recipe-card {
+  position: relative;
+}
+
+.recipe-page-number {
+  position: absolute;
+  bottom: 0.25in;
+  right: 0.1in;
+  font-size: 0.55em;
+  color: #666;
+  font-weight: 600;
+}
+
+.recipe-cards-multi .recipe-source {
+  bottom: 0.25in;
+  left: 0.1in;
+  right: auto;
+}
+
 /* Responsive */
 @media (max-width: 900px) {
   .app-main {
@@ -323,7 +349,9 @@
 
   .app-header,
   .input-section,
-  .preview-header {
+  .preview-header,
+  .auto-import-status,
+  .auto-import-error {
     display: none !important;
   }
 
@@ -344,14 +372,31 @@
     height: 6in;
     box-shadow: none;
     margin: 0;
-    page-break-after: avoid;
+    page-break-after: always;
     page-break-inside: avoid;
     /* Thermal printer optimizations */
     -webkit-font-smoothing: none;
     font-smooth: never;
   }
 
+  .recipe-card:last-child {
+    page-break-after: avoid;
+  }
+
   .recipe-card * {
+    color: #000 !important;
+  }
+
+  .recipe-cards-multi {
+    display: block;
+    gap: 0;
+  }
+
+  .recipe-cards-multi .recipe-card {
+    margin: 0;
+  }
+
+  .recipe-page-number {
     color: #000 !important;
   }
 }
