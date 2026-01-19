@@ -1,0 +1,272 @@
+/* App Layout */
+.app {
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+.app-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.app-header h1 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.app-header p {
+  color: #666;
+  margin: 0;
+}
+
+.app-main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Form Section */
+.input-section {
+  background: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 8px;
+}
+
+.recipe-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #0066cc;
+  box-shadow: 0 0 0 2px rgba(0, 102, 204, 0.2);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+/* Preview Section */
+.preview-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.preview-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.preview-header h2 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.print-button {
+  background: #0066cc;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.print-button:hover {
+  background: #0052a3;
+}
+
+.preview-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background: #e9ecef;
+  padding: 1.5rem;
+  border-radius: 8px;
+  flex: 1;
+}
+
+/* Recipe Card - 4x6 inches */
+.recipe-card {
+  width: 4in;
+  height: 6in;
+  background: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  font-family: 'Arial Black', 'Arial', sans-serif;
+  font-size: 12pt;
+  font-weight: 600;
+  color: #000;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+.recipe-card-content {
+  padding: 0.1in;
+  height: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.recipe-title {
+  font-size: 1.35em;
+  font-weight: 900;
+  margin: 0 0 0.5em 0;
+  text-align: center;
+  border-bottom: 3px solid #000;
+  padding-bottom: 0.4em;
+}
+
+.recipe-meta {
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+  font-size: 0.75em;
+  margin-bottom: 0.75em;
+  color: #000;
+  font-weight: 700;
+}
+
+.recipe-meta span {
+  white-space: nowrap;
+}
+
+.recipe-section {
+  margin-bottom: 0.75em;
+}
+
+.recipe-section h2 {
+  font-size: 0.9em;
+  font-weight: 900;
+  margin: 0 0 0.3em 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.ingredients-list {
+  margin: 0;
+  padding-left: 1.3em;
+  font-size: 0.75em;
+  line-height: 1.4;
+}
+
+.ingredients-list li {
+  margin-bottom: 0.15em;
+}
+
+.instructions-list {
+  margin: 0;
+  padding-left: 1.5em;
+  font-size: 0.75em;
+  line-height: 1.4;
+}
+
+.instructions-list li {
+  margin-bottom: 0.3em;
+}
+
+.recipe-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: #999;
+  text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .app-main {
+    grid-template-columns: 1fr;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .preview-container {
+    overflow-x: auto;
+  }
+}
+
+/* Print Styles */
+@media print {
+  @page {
+    size: 4in 6in;
+    margin: 0;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+  }
+
+  .app-header,
+  .input-section,
+  .preview-header {
+    display: none !important;
+  }
+
+  .app,
+  .app-main,
+  .preview-section,
+  .preview-container {
+    display: block !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    background: none !important;
+    width: auto !important;
+    height: auto !important;
+  }
+
+  .recipe-card {
+    width: 4in;
+    height: 6in;
+    box-shadow: none;
+    margin: 0;
+    page-break-after: avoid;
+    page-break-inside: avoid;
+    /* Thermal printer optimizations */
+    -webkit-font-smoothing: none;
+    font-smooth: never;
+  }
+
+  .recipe-card * {
+    color: #000 !important;
+  }
+}
