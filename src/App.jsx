@@ -36,8 +36,8 @@ function App() {
   return (
     <div className="app">
       <header className="app-header">
-        <h1>Recipe Card Generator</h1>
-        <p>Create 4x6" recipe cards for thermal printing</p>
+        <h1>Julia</h1>
+        <p>Create 4x6" recipe cards for printing on thermal printers</p>
       </header>
 
       <main className="app-main">
