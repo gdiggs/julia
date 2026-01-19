@@ -89,6 +89,12 @@ function RecipeCard({ recipe }) {
             <p>Enter your recipe details to see a preview</p>
           </div>
         )}
+
+        {recipe.sourceUrl && (
+          <div className="recipe-source">
+            Source: {new URL(recipe.sourceUrl).hostname.replace(/^www\./, '')}
+          </div>
+        )}
       </div>
     </div>
   )

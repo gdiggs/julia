@@ -4,6 +4,7 @@ A web application for creating 4x6" recipe cards optimized for thermal printer o
 
 ## Features
 
+- **Import from URL** - Paste a recipe URL to automatically extract recipe data
 - **4x6" Recipe Cards** - Sized perfectly for standard thermal printer paper
 - **Live Preview** - See your recipe card update as you type
 - **Auto-scaling Text** - Long recipes automatically reduce font size to fit the card
@@ -63,6 +64,16 @@ docker run -p 8080:80 dee
 The app will be available at http://localhost:8080
 
 ## Usage
+
+### Import from URL
+
+1. Paste a recipe URL into the import field
+2. Click **Import** to extract the recipe data
+3. The form will be populated with the recipe details
+
+Most recipe websites use structured data (JSON-LD with schema.org Recipe) which the app can parse automatically.
+
+### Manual Entry
 
 1. Enter your recipe details:
    - **Title** - Name of the recipe

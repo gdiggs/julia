@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import RecipeForm from './components/RecipeForm'
 import RecipeCard from './components/RecipeCard'
+import ImportUrl from './components/ImportUrl'
 import './App.css'
 
 function App() {
@@ -11,6 +12,7 @@ function App() {
     cookTime: '',
     ingredients: '',
     instructions: '',
+    sourceUrl: '',
   })
 
   useEffect(() => {
@@ -19,6 +21,10 @@ function App() {
 
   const handleChange = (field, value) => {
     setRecipe(prev => ({ ...prev, [field]: value }))
+  }
+
+  const handleImport = (importedRecipe) => {
+    setRecipe(importedRecipe)
   }
 
   const handlePrint = () => {
@@ -36,6 +42,7 @@ function App() {
 
       <main className="app-main">
         <section className="input-section">
+          <ImportUrl onImport={handleImport} />
           <RecipeForm recipe={recipe} onChange={handleChange} />
         </section>
 
