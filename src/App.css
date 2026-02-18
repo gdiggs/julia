@@ -370,10 +370,14 @@
   .recipe-card {
     width: 4in;
     height: 6in;
+    max-height: 6in;
     box-shadow: none;
     margin: 0;
+    overflow: hidden;
     page-break-after: always;
+    break-after: page;
     page-break-inside: avoid;
+    break-inside: avoid;
     /* Thermal printer optimizations */
     -webkit-font-smoothing: none;
     font-smooth: never;
@@ -381,6 +385,7 @@
 
   .recipe-card:last-child {
     page-break-after: avoid;
+    break-after: avoid;
   }
 
   .recipe-card * {
