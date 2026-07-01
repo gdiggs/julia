@@ -1,7 +1,17 @@
 const CORS_PROXY = 'https://corsproxy.io/?'
+const CORS_PROXY_API_KEY = '92d0aa58'
+
+function buildProxyUrl(url) {
+  let proxyUrl = CORS_PROXY + encodeURIComponent(url)
+  // corsproxy.io requires an API key outside of local development
+  if (!import.meta.env.DEV) {
+    proxyUrl += '&key=' + CORS_PROXY_API_KEY
+  }
+  return proxyUrl
+}
 
 export async function fetchRecipeFromUrl(url) {
-  const response = await fetch(CORS_PROXY + encodeURIComponent(url))
+  const response = await fetch(buildProxyUrl(url))
   if (!response.ok) {
     throw new Error('Failed to fetch URL')
   }
