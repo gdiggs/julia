@@ -1,4 +1,4 @@
-const CORS_PROXY = 'https://corsproxy.io/?'
+const CORS_PROXY = 'https://corsproxy.io/?url='
 const CORS_PROXY_API_KEY = '92d0aa58'
 
 function buildProxyUrl(url) {
